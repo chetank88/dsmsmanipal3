@@ -1,4 +1,5 @@
 <?php
+    //sfdfsafdsadfsa
     $uid=7000;
       $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
                 $user = "harsha";
