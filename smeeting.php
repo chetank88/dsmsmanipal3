@@ -1,17 +1,7 @@
 <?php
     //harsha
     $uid=7000;
-      $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
-                $user = "harsha";
-                $pwd = "khv9440385189@";
-                $db = "Computer_SC_and_Engg";
-                try{
-                   $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-                   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-                }
-                catch(Exception $e){
-                    die(print_r($e));
-                 }
+     
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +36,7 @@
         </tr>
     </thead>";
                $sql_select="SELECT * FROM  Meeting WHERE uid={$uid}";
-     $stmt=$conn->query($sql_select);
+     $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
      $n=count($registrants) ;
   echo "<tbody>";

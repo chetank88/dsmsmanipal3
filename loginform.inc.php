@@ -11,8 +11,8 @@
      {
          try
          {
-           $tsql="SELECT ID FROM Teachers WHERE Username='{$name_hash}' AND Password='{$pass_hash}'";
-           $stmt =sqlsrv_query($conn1,$tsql,array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
+           $tsql="SELECT ID FROM USERS WHERE Username='{$name_hash}' AND Password='{$pass_hash}'";
+           $stmt =sqlsrv_query($connLG,$tsql,array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
            if( $stmt === false )
         {
             echo "Error in query preparation/execution.\n";

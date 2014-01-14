@@ -21,12 +21,12 @@ function loggedin()
    }
 }
 
-function getuserfield($field,$conn)
+function getuserfield($field,$conn1)
 {
 
      $tsql="SELECT $field FROM Teachers WHERE ID=".$_SESSION['id'];
      try{
-         $stmt=sqlsrv_query($conn,$tsql);
+         $stmt=sqlsrv_query($conn1,$tsql);
         }
      catch(Exception $e)
      {

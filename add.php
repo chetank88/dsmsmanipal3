@@ -4,7 +4,7 @@
   $j=1;
   for($k=1;$k<=12;$k++)
   {
-     echo $_SESSION['m'.$k]=$_POST['m'.$k];
+     $_SESSION['m'.$k]=$_POST['m'.$k];
   }
   function display($val1,$val2)
   {
