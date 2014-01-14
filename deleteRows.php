@@ -17,7 +17,7 @@ header('Location :createSchedule.php');
 }
 else
   {
-      include 'loginform.inc.php';
+      header('Location: index.php');
   }
 ?>
 

@@ -1,6 +1,9 @@
 <?php
   require 'core.inc.php';
-  echo $http_referer;
+    if(!loggedin())
+     {
+      header('Location: index.php');
+     }
   session_destroy();
   header('Location: index.php');
 ?>

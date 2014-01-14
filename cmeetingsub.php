@@ -18,8 +18,12 @@
 </li>
 </ul>
   <?php
-
-
+      include 'core.inc.php';
+      if(!loggedin())
+     {
+       header('Location: index.php');
+     }
+     
       $uid=7000;
 if(isset($_POST["submit"]) && $_POST["submit"]!="") 
 {

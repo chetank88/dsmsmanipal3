@@ -1,7 +1,12 @@
 <?php
     //harsha
     $uid=7000;
-     
+     include 'connect.inc.php'; 
+
+  if(!loggedin())
+  {
+      header('Location: loginform.inc.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +90,7 @@
         </tr>
     </thead>";
                $sql_select="select * from Meeting,Meeting_Att,People where Meeting.mid=Meeting_Att.mid and Meeting.uid=People.uid and attid=4568";
-     $stmt=$conn->query($sql_select);
+     $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
   
               if(count($registrants) > 0) {

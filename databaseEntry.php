@@ -100,7 +100,7 @@
     }
     else
   {
-      include 'loginform.inc.php';
+      header('Location: index.php');
   }
 ?>
 

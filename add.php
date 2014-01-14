@@ -1,6 +1,11 @@
 
 <?php
   require 'core.inc.php';
+  if(!loggedin())
+  {
+       header('Location: index.php');
+  }
+
   $j=1;
   for($k=1;$k<=12;$k++)
   {

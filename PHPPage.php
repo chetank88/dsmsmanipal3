@@ -1,4 +1,13 @@
+<?php
+    
+ include 'core.inc.php';
 
+  if(!loggedin())
+     {
+       header('Location: index.php');
+     }
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

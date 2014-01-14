@@ -1,5 +1,12 @@
 <?php
-$host = "tcp:pf9xx4rmq4.database.windows.net,1433";
+ include 'core.inc.php';
+ include 'connect.inc.php'; 
+
+ if(!loggedin())
+  {
+      include 'loginform.inc.php';
+  }
+/*$host = "tcp:pf9xx4rmq4.database.windows.net,1433";
 $user = "harsha";
 $pwd = "khv9440385189@";
 $db = "Computer_SC_and_Engg";
@@ -12,7 +19,7 @@ catch(Exception $e){
     echo "connection gone";
     die(print_r($e));
     }
-   
+ */  
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +65,7 @@ catch(Exception $e){
                $sql_select="select Name,Designation,Phoneno,email,attid,attendence from Meeting_Att,People where mid='{$unsecure}' and uid=attid";
         
           //echo $sql_select;
-             $stmt=$conn->query($sql_select);
+             $stmt=$connHar->query($sql_select);
              $registrants=$stmt->fetchAll();
       
            echo "<tbody>";

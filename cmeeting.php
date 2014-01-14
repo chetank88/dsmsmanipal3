@@ -67,7 +67,13 @@
         </div>
    
         <?php
-          
+          include 'core.inc.php';
+          include 'connect.inc.php'; 
+
+          if(!loggedin())
+         {
+             header('Location: index.php');
+          }
            if(!empty($_POST))
             {
      ini_set('error_reporting', E_ALL);
@@ -75,7 +81,7 @@ ini_set('display_errors', 'On');
 //For Selection by Rank
 
       // DB connection info
-                $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
+              /*  $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
                 $user = "harsha";
                 $pwd = "khv9440385189@";
                 $db = "Computer_SC_and_Engg";
@@ -85,7 +91,7 @@ ini_set('display_errors', 'On');
                 }
                 catch(Exception $e){
                     die(print_r($e));
-                 }
+                 }*/
                 print("<div class='background'></div>");
                   print("<div class='modal'>");
                   print("<h3>People who are available!</h3>");
@@ -158,7 +164,7 @@ if(count($registrants) > 0) {
       $k=0;
       
      $sql_select2="SELECT * FROM  {$registrant['tid']} ";
-     $stmt1=$conn->query($sql_select2);
+     $stmt1=$connHar->query($sql_select2);
      $registrants1=$stmt1->fetchAll();
      $temp=$registrants1[$dn-1];
      $stemp=$temp['bsh'];
