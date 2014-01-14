@@ -1,0 +1,240 @@
+ .form1    {
+background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
+background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+margin:auto;
+position:relative;
+width:550px;
+height:450px;
+font-family: Tahoma, Geneva, sans-serif;
+font-size: 14px;
+font-style: italic;
+line-height: 24px;
+font-weight: bold;
+color: #09C;
+text-decoration: none;
+
+padding:10px;
+
+}
+ h3{
+     color: #09C;
+ }
+ input{
+width:375px;
+display:block;
+border: 1px solid #999;
+height: 25px;
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+ input.datetime{
+  width: 170px;
+display:block;
+border: 1px solid #999;
+height: 25px;
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+ }
+ textarea#feedback {
+width:375px;
+height:150px;
+}
+ textarea {
+display:block;
+}
+ textarea:focus, input:focus {
+border: 1px solid #09C;
+}
+ input.cancelbutton
+ {
+     width:100px;
+position:absolute;
+left:20px;
+bottom:20px;
+background:#09C;
+color:#fff;
+font-family: Tahoma, Geneva, sans-serif;
+height:30px;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+border: 1p solid #999;
+     
+ }
+ input.cancelbutton:focus
+ {
+  border-radius: 15px;
+border: 1p solid #999;
+ }
+ input.button:focus
+ {
+    border-radius: 15px;
+border: 1p solid #999;
+ }
+
+ input.button{
+width:100px;
+position:absolute;
+right:20px;
+bottom:20px;
+background:#09C;
+color:#fff;
+font-family: Tahoma, Geneva, sans-serif;
+height:30px;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+border: 1p solid #999;
+
+}
+input.button:hover {
+background:#fff;
+color:#09C;
+}
+ /* This is the CSS for the normal div */
+  .normal {
+
+    width: 900px;
+    min-height: 200px;
+    padding: 20px;
+  }
+
+  /* This is the CSS for the modal dialog window */
+  .modal {
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+    padding: 20px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 500px;
+    width: 400px;
+    height: 570px;
+  }
+  
+  /* This gives us the styling for the background */
+  .background {
+    background-color: black;
+    opacity: 90;
+    filter:alpha(opacity=90);
+    background-color: rgba(0,0,0,0.90);
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+  }
+.container {
+    border: 2px solid #ccc;
+    width: 400px;
+    height: 280px;
+    overflow-y: scroll;
+    border-width: 0px;
+}
+ #ex3::-webkit-scrollbar{
+width:16px;
+
+background-color:#cccccc;
+} 
+ #ex3::-webkit-scrollbar-thumb{
+background-color:#09C;
+border-radius:10px;
+}
+#ex3::-webkit-scrollbar-thumb:hover{
+background-color:#09C;
+border:1px solid #333333;
+}
+#ex3::-webkit-scrollbar-thumb:active{
+background-color:#09C;
+border:1px solid #333333;
+} 
+ #ex3::-webkit-scrollbar-track{
+border:1px gray solid;
+border-radius:10px;
+-webkit-box-shadow:0 0 6px gray inset;
+} 
+ input.ckbox
+ {
+     width: 20px;
+     height: 20px;
+
+ }
+ 
+#hor-minimalist-b
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 4px;
+	width: 350px;
+	border-collapse: collapse;
+	text-align: left;
+}
+#hor-minimalist-b th
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #09C;
+	padding: 1px 1px 0px 0px;
+	border-bottom: 2px solid #6678b1;
+}
+#hor-minimalist-b td
+{
+	border-bottom: 1px solid #ccc;
+	color: black;
+	padding: 1px 1px 0px 0px;
+}
+#hor-minimalist-b tbody tr:hover td
+{
+	color: #009;
+}
+ #cb
+ {
+     color: #09C;
+ }
+ .ckdbox{
+       width: 10px;
+     height: 10px;
+     display: inline;
+ }
+ ul#menu, ul.submenu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul#menu li{
+    float: left;
+}
+/* hide the submenu */
+li ul.submenu {
+    display: none;
+}
+ul#menu li a{
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 7px 14px;
+    background:black;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    float:none;
+}
+/* show the submenu */
+ul#menu li:hover ul.submenu{
+    display: block;
+    position: absolute;
+    float:left;
+}
+ul#menu li:hover li,  ul#menu li:hover a {
+    float: none;
+    background: Red;
+}
+ul#menu li:hover li a:hover {
+    background: brown;
+
+}
