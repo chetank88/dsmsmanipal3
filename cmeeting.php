@@ -157,7 +157,7 @@ else
 <input type='hidden' name='datep' value={$_POST['mday']}/>
 <input type='hidden' name='timep' value={$_POST['mtime']}/>";
          $sql_select1 = "SELECT * FROM People" ;
-       $stmt = $conn->query($sql_select1);
+       $stmt = $connHar->query($sql_select1);
      $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
     foreach($registrants as $registrant) {
@@ -181,7 +181,7 @@ if(count($registrants) > 0) {
      
 
     $sql_select3="SELECT * FROM  Meeting_Att WHERE attid={$registrant['uid']} and date={$mday}";
-     $stmt2=$conn->query($sql_select3);
+     $stmt2=$connHar->query($sql_select3);
      $registrants2=$stmt2->fetchAll();
  
      if(count($registrants2) > 0) {

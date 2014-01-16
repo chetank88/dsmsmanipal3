@@ -4,7 +4,7 @@ if(loggedin())
   {
       require 'connect.inc.php';  
  
-      $fname=getuserfield('Fname',$conn1);
+      $fname=getuserfield('Name',$conn1);
       echo 'You\'r logged in'.$fname.'<a href="logout.php">Log out</a>';
   }
   else
@@ -103,6 +103,8 @@ border-left: 1px solid #e9e9e9;
             <li class="top"><a href="createSchedule.php">Create Schedule</a></li>
             <li><a href="timetable.php">View Schedule</a></li>
         </ul>
+        </li>
+          <li class="first"><a href="meeting.php">Meeting</a>
         </li>
     </ul>
 </div>

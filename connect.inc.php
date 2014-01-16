@@ -19,7 +19,7 @@
                 $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
                 $user = "harsha";
                 $pwd = "khv9440385189@";
-                 $db2="ComputerScienceDB";
+                 $db2="Computer_SC_and_Engg";
 
        // Connect to database.
         try

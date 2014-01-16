@@ -4,8 +4,8 @@ require 'connect.inc.php';
 
 if(loggedin())
 {
-
-$fname=getuserfield('Fname',$conn1);
+    
+$fname=getuserfield('Name',$conn1);
       echo 'You\'r logged in'.$fname.'<a href="logout.php">Log out</a>';
 
 $tsql="DELETE FROM table".$_SESSION['id'];

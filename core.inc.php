@@ -24,7 +24,7 @@ function loggedin()
 function getuserfield($field,$conn1)
 {
 
-     $tsql="SELECT $field FROM Teachers WHERE ID=".$_SESSION['id'];
+     $tsql="SELECT $field FROM People WHERE uid=".$_SESSION['id'];
      try{
          $stmt=sqlsrv_query($conn1,$tsql);
         }

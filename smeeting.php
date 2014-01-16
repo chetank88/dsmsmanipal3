@@ -2,10 +2,10 @@
     //harsha
     $uid=7000;
      include 'connect.inc.php'; 
-
+     include 'core.inc.php';
   if(!loggedin())
   {
-      header('Location: loginform.inc.php');
+      header('Location: index.inc.php');
   }
 ?>
 <!DOCTYPE html>
