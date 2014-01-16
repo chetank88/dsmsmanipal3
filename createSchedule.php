@@ -29,6 +29,9 @@ else
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    
+		<script src="jquery-2.0.3.min.js"></script>
+	
         <meta charset="utf-8" />
         <title></title>
     </head>
@@ -157,3 +160,18 @@ else
        </form>
     </body>
 </html>
+<script>var $selects = $('select');
+$selects.on('change', function() {
+    $("option", $selects).prop("disabled", false);
+    $selects.each(function() {
+        var $select = $(this), 
+            $options = $selects.not($select).find('option'),
+            selectedText = $select.children('option:selected').text();
+        $options.each(function() {
+            if($(this).text() == selectedText) $(this).prop("disabled", true);
+        });
+    });
+});
+
+$selects.eq(0).trigger('change');
+</script>
