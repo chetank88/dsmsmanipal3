@@ -11,8 +11,9 @@
   {
      $_SESSION['m'.$k]=$_POST['m'.$k];
   }
-  function display($val1,$val2)
+  function display($val1,$val2,$s)
   {
+
         for($i=0;$i<$val1;$i++)
         {
 		 echo' <input type="text" name="n'.$GLOBALS['j']++.'"/>';
@@ -27,7 +28,21 @@
 		  <option value=16>3:30:4:30</option>
 		  <option value=18>4:30-5:30</option>
 		  </select>
-	     <br /><br />';
+	     <br /><br />';?>
+         <!-- <script>var $selects = document.getElementById("select".<?php echo $s;?>);
+$selects.on('change', function() {
+    $("option", $selects).prop("disabled", false);
+    $selects.each(function() {
+        var $select = $(this), 
+            $options = $selects.not($select).find('option'),
+            selectedText = $select.children('option:selected').text();
+        $options.each(function() {
+            if($(this).text() == selectedText) $(this).prop("disabled", true);
+        });
+    });
+});-->
+
+</script><?php
         }
 	 
         echo 'Labs:<br />';
@@ -46,7 +61,7 @@
  ?>
 
 <link rel="stylesheet" type="text/css" href="main.css">
-
+<!--<script src="jquery-2.0.3.min.js"></script>-->
 <form name="output" action="timetable.php" method="post">
               <input type="submit" value="Time Table">
 </form>
@@ -61,7 +76,7 @@
 		  
 	      <br />
          <?php
-             display($_POST['m1'],$_POST['m2']);  
+             display($_POST['m1'],$_POST['m2'],0);  
          ?>
 </div>
 
@@ -74,7 +89,7 @@
 		  
 	      <br />
          <?php
-            display($_POST['m3'],$_POST['m4']);  
+            display($_POST['m3'],$_POST['m4'],1);  
          ?>
 </div>
 
@@ -87,7 +102,7 @@
 		  
 	      <br />
          <?php
-            display($_POST['m5'],$_POST['m6']);  
+            display($_POST['m5'],$_POST['m6'],2);  
          ?>
 </div>
 
@@ -100,7 +115,7 @@
 		  
 	      <br />
          <?php
-             display($_POST['m7'],$_POST['m8']);  
+             display($_POST['m7'],$_POST['m8'],3);  
          ?>
 </div>
 
@@ -113,7 +128,7 @@
 		  
 	      <br />
          <?php
-            display($_POST['m9'],$_POST['m10']);  
+            display($_POST['m9'],$_POST['m10'],4);  
          ?>
 </div>
 
@@ -126,7 +141,7 @@
 		  
 	      <br />
          <?php
-           display($_POST['m11'],$_POST['m12']);    
+           display($_POST['m11'],$_POST['m12'],5);    
           echo ' <br/><br/><br/><br/><br/><br/><br/><br/><br/>
           <input type="submit" value="Create time table">';
          ?>

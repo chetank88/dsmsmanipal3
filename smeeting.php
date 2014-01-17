@@ -1,12 +1,13 @@
 <?php
+    
     //harsha
-    $uid=7000;
      include 'connect.inc.php'; 
      include 'core.inc.php';
   if(!loggedin())
   {
       header('Location: index.inc.php');
   }
+  $uid=$_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +90,7 @@
     
         </tr>
     </thead>";
-               $sql_select="select * from Meeting,Meeting_Att,People where Meeting.mid=Meeting_Att.mid and Meeting.uid=People.uid and attid=4568";
+      $sql_select="select * from Meeting,Meeting_Att,People where Meeting.mid=Meeting_Att.mid and Meeting.uid=People.uid";
      $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
   

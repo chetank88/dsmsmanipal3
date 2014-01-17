@@ -6,20 +6,7 @@
   {
       include 'loginform.inc.php';
   }
-/*$host = "tcp:pf9xx4rmq4.database.windows.net,1433";
-$user = "harsha";
-$pwd = "khv9440385189@";
-$db = "Computer_SC_and_Engg";
-try{
-    $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-   
-}
-catch(Exception $e){
-    echo "connection gone";
-    die(print_r($e));
-    }
- */  
+ 
 ?>
 
 <!DOCTYPE html>
@@ -179,7 +166,7 @@ catch(Exception $e){
         </tr>
     </thead>";
             $sql_select="select Name,Designation,Phoneno,email,attid,attendence from Meeting_Att,People where mid='{$unsecure}' and uid=attid";
-            $stmt=$conn->query($sql_select);
+            $stmt=$connHar->query($sql_select);
              $registrants=$stmt->fetchAll();
       
                    if(count($registrants) > 0) {

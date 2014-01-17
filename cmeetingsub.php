@@ -19,12 +19,13 @@
 </ul>
   <?php
       include 'core.inc.php';
+      include 'connect.inc.php';
       if(!loggedin())
      {
        header('Location: index.php');
      }
      
-      $uid=7000;
+      $uid=$_SESSION['id'];
 if(isset($_POST["submit"]) && $_POST["submit"]!="") 
 {
 $usersCount = count($_POST["chbox"]);
@@ -40,20 +41,7 @@ $datep=rtrim($datep,'/');
 $timep= $_POST["timep"];
 $timep=rtrim($timep,'/');
 
-//Database Connection
-  $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
-$user = "harsha";
-$pwd = "khv9440385189@";
-$db = "Computer_SC_and_Engg";
-try{
-    $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-   
-}
-catch(Exception $e){
-    echo "connection gone";
-    die(print_r($e));
-    }
+
    
         // Insert data into Meeting table
       try {
@@ -62,7 +50,7 @@ catch(Exception $e){
     $sql_insert = "INSERT INTO Meeting (uid, tytle, otherinfo,date,time) 
                    VALUES (?,?,?,?,?)";
                      
-    $stmt = $conn->prepare($sql_insert);
+    $stmt = $connHar->prepare($sql_insert);
  
     $stmt->bindValue(1, $uid);
     $stmt->bindValue(2,  $titlep);
@@ -84,7 +72,7 @@ try
 {
 $sql_query1="SELECT mid FROM Meeting WHERE uid= {$uid} and date='{$datep}' and time='{$timep}'";
 
- $stmt = $conn->query($sql_query1);
+ $stmt = $connHar->query($sql_query1);
      $registrants = $stmt->fetchAll(); 
 
      foreach($registrants as $registrant)
@@ -109,7 +97,7 @@ for($i=0;$i< $usersCount;$i++)
            $sql_insert = "INSERT INTO Meeting_Att (mid, attid, btime,date) 
                    VALUES (?,?,?,?)";
                      
-    $stmt = $conn->prepare($sql_insert);
+    $stmt = $connHar->prepare($sql_insert);
 
     $stmt->bindValue(1, $mid);
   
@@ -149,13 +137,6 @@ else
 {
     echo "<h1>no Meeting to create</h1>";
 }
-
-
-
-
-
-
-
 
 ?>
 </body>

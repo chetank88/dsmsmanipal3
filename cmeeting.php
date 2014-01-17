@@ -80,18 +80,7 @@
 ini_set('display_errors', 'On');
 //For Selection by Rank
 
-      // DB connection info
-              /*  $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
-                $user = "harsha";
-                $pwd = "khv9440385189@";
-                $db = "Computer_SC_and_Engg";
-                try{
-                   $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
-                   $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-                }
-                catch(Exception $e){
-                    die(print_r($e));
-                 }*/
+      
                 print("<div class='background'></div>");
                   print("<div class='modal'>");
                   print("<h3>People who are available!</h3>");
@@ -160,6 +149,7 @@ else
        $stmt = $connHar->query($sql_select1);
      $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) {
+
     foreach($registrants as $registrant) {
       $k=0;
       
@@ -167,7 +157,7 @@ if(count($registrants) > 0) {
      $stmt1=$connHar->query($sql_select2);
      $registrants1=$stmt1->fetchAll();
      $temp=$registrants1[$dn-1];
-     $stemp=$temp['bsh'];
+     $stemp=$temp['strbin'];
      //echo $stemp;
    // echo $temp['day'];
    // echo $stemp[$n-1];
