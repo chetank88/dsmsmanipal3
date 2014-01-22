@@ -9,7 +9,12 @@
 </head>
 
 <body onload="noBack();"  onunload="">
-    <ul id="menu">
+<div>
+<span></span>
+<link href="logout.css" rel="stylesheet" type="text/css"></link>
+<a href="logout.php">Log out</a></div>	
+</div>
+<ul id="menu">
 <li><a href="#">Meeting</a>
     <ul class="submenu">
         <li><a href="cmeeting.php">Create Meeting</a></li>

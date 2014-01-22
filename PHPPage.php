@@ -26,6 +26,11 @@
 </head>
 
 <body>
+<div>
+<span></span>
+<link href="logout.css" rel="stylesheet" type="text/css"></link>
+<a href="logout.php">Log out</a></div>	
+</div>
 <form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
 First name: <input type="text" name="fname">
         <label><span>  Date:</span>  <input type="date" class="datetime" name="mday" min =<?php echo date("Y-m-d");?> required></label>

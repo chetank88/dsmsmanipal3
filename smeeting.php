@@ -1,6 +1,5 @@
 <?php
-    
-    //harsha
+  
      include 'connect.inc.php'; 
      include 'core.inc.php';
   if(!loggedin())
@@ -15,9 +14,15 @@
         <meta charset="utf-8" />
         <title></title>
         <link rel="stylesheet" type="text/css" href="smeeting.css">
+
       
     </head>
     <body>
+<div>
+<span></span>
+<link href="logout.css" rel="stylesheet" type="text/css"></link>
+<a href="logout.php">Log out</a></div>	
+</div>
         <ul id="menu">
 <li><a href="#">Meeting</a>
     <ul class="submenu">
@@ -32,8 +37,8 @@
               {
                      echo "<table id='rounded-corner' summary='Meetings Created By U'>
     <thead>
-    	<tr>
-        	<th scope='col' class='rounded-company'>Meeting Id</th>
+            <tr>
+                <th scope='col' class='rounded-company'>Meeting Id</th>
             <th scope='col' class='rounded-q1'>Title</th>
             <th scope='col' class='rounded-q2'>Info</th>
             <th scope='col' class='rounded-q2'>Date</th>
@@ -56,21 +61,21 @@
                   $secure = rand(100,999).base64_encode($registrant['mid']);
                   //echo $secure;
         echo " <tr>
-        	<td>{$registrant['mid']}</td>
+                <td>{$registrant['mid']}</td>
             <td>{$registrant['tytle']}</td>
             <td>{$registrant['otherinfo']}</td>
             <td>{$registrant['date']}</td>
             <td>{$registrant['time']}</td>
-            <td><a href='atten.php?mid={$secure}'><input  type='submit' class='button' name='butt[]' value='Attendence'/></a></td>
+            <td><a href='atten.php?mid={$secure}&s=y'><input  type='submit' class='button' name='butt[]' value='Attendence'/></a></td>
         </tr>";
     
 
   }
         
   echo "</tbody><tfoot>
-    	<tr>
-        	<td colspan='4' class='rounded-foot-left'><em>The above  Meetings are created by you</em></td>
-        	<td class='rounded-foot-right'>&nbsp;</td>
+            <tr>
+                <td colspan='4' class='rounded-foot-left'><em>The above  Meetings are created by you</em></td>
+                <td class='rounded-foot-right'>&nbsp;</td>
         </tr>
     </tfoot></table>";   }
               }
@@ -81,16 +86,17 @@
               {
                      echo "<table id='rounded-corner' summary='Meetings Created By U'>
     <thead>
-    	<tr>
-        	<th scope='col' class='rounded-company'>Meeting Id</th>
+            <tr>
+                <th scope='col' class='rounded-company'>Meeting Id</th>
             <th scope='col' class='rounded-q1'>Title</th>
             <th scope='col' class='rounded-q2'>Info</th>
             <th scope='col' class='rounded-q2'>Date</th>
+                <th scope='col' class='rounded-q2'>Called By</th>
             <th scope='col' class='rounded-q4'>Time</th>
     
         </tr>
     </thead>";
-      $sql_select="select * from Meeting,Meeting_Att,People where Meeting.mid=Meeting_Att.mid and Meeting.uid=People.uid";
+      $sql_select="select * from Meeting,Meeting_Att,People where Meeting.mid=Meeting_Att.mid and Meeting.uid=People.uid and Meeting.uid!={$uid} and Meeting_Att.attid={$uid}";
      $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
   
@@ -98,11 +104,12 @@
     foreach($registrants as $registrant) {
 
  echo "<tbody>
-    	<tr>
-        	<td>{$registrant['mid']}</td>
+            <tr>
+                <td>{$registrant['mid']}</td>
             <td>{$registrant['tytle']}</td>
             <td>{$registrant['otherinfo']}</td>
             <td>{$registrant['date']}</td>
+            <td>{$registrant['Name']}</td>
             <td>{$registrant['time']}</td>
        
         </tr>
@@ -112,9 +119,9 @@
   }
         
   echo "<tfoot>
-    	<tr>
-        	<td colspan='4' class='rounded-foot-left'><em>You are invited to above Meetings  </em></td>
-        	<td class='rounded-foot-right'>&nbsp;</td>
+            <tr>
+                <td colspan='4' class='rounded-foot-left'><em>You are invited to above Meetings  </em></td>
+                <td class='rounded-foot-right'>&nbsp;</td>
         </tr>
     </tfoot></table>";   }
               }

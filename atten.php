@@ -6,7 +6,6 @@
   {
       include 'loginform.inc.php';
   }
- 
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +16,11 @@
              <link rel="stylesheet" type="text/css" href="smeeting.css">
     </head>
     <body>
+<div>
+<span></span>
+<link href="logout.css" rel="stylesheet" type="text/css"></link>
+<a href="logout.php">Log out</a></div>	
+</div>
         <ul id="menu">
 <li><a href="#">Meeting</a>
     <ul class="submenu">
@@ -28,15 +32,15 @@
         <?php
             
          
-            if(isset($_GET['mid'])&&$_POST['s']!='y'&&!isset($_POST['chbox']))
+            if(isset($_GET['mid'])&&$_GET['s']=='y'&&!isset($_POST['chbox']))
             {//Database Connection
   
                try
               {
                      echo "<table id='rounded-corner' summary='Attendence'>
     <thead>
-    	<tr>
-        	<th scope='col' class='rounded-company'>Name</th>
+            <tr>
+                <th scope='col' class='rounded-company'>Name</th>
             <th scope='col' class='rounded-q1'>Designation</th>
             <th scope='col' class='rounded-q2'>Phone number</th>
             <th scope='col' class='rounded-q3'>EMAIL</th>
@@ -56,7 +60,7 @@
              $registrants=$stmt->fetchAll();
       
            echo "<tbody>";
-               echo "<form  action='#' method='POST'>";
+               echo "<form  action='http://dsmsmanipal3.azurewebsites.net/atten.php?mid={$_GET['mid']}&s=n' method='POST'>";
               // echo count($registrants);
                $k=0;
                     if(count($registrants) > 0) {
@@ -65,9 +69,9 @@
         foreach($registrants as $registrant) {
        
         
-    	    echo "<tr>
+                echo "<tr>
          
-        	<td>{$registrant['Name']}</td>
+            <td>{$registrant['Name']}</td>
             <td>{$registrant['Designation']}</td>
             <td>{$registrant['Phoneno']}</td>
             <td>{$registrant['email']}</td>
@@ -82,9 +86,9 @@
     if($g==0)
     {
   echo "<tfoot>
-    	<tr>
-        	<td colspan='4' class='rounded-foot-left'><em>Attendence A-absent P-present</em></td>
-        	   <input type='hidden' name='s' value='y'/>
+            <tr>
+                <td colspan='4' class='rounded-foot-left'><em>Attendence A-absent P-present</em></td>
+                   <input type='hidden' name='s1' value='y'/>
            <td> <input type='submit' class='button'  value='save'/></td>
             <td class='rounded-foot-right'>&nbsp;</td>
         </tr>
@@ -92,8 +96,8 @@
    else
    {
          echo "<tfoot>
-    	<tr>
-        	<td colspan='4' class='rounded-foot-left'><em>Attendence </em></td>
+            <tr>
+                <td colspan='4' class='rounded-foot-left'><em>Attendence </em></td>
         
           
             <td class='rounded-foot-right'>&nbsp;</td>
@@ -108,7 +112,7 @@
                  }
             }
   
-            if($_POST['s']=='y')
+            if($_GET['s']=='n')
             {
                 
               
@@ -147,7 +151,7 @@
                     
                    //echo $sql_update;
                     }
-                    $stmt = $conn->query($sql_update);
+                    $stmt = $connHar->query($sql_update);
                   
 
                 }
@@ -155,8 +159,8 @@
              
       echo "<table id='rounded-corner' summary='Attendence'>
     <thead>
-    	<tr>
-        	<th scope='col' class='rounded-company'>Name</th>
+            <tr>
+                <th scope='col' class='rounded-company'>Name</th>
             <th scope='col' class='rounded-q1'>Designation</th>
             <th scope='col' class='rounded-q2'>Phone number</th>
             <th scope='col' class='rounded-q3'>EMAIL</th>
@@ -174,8 +178,8 @@
         foreach($registrants as $registrant) {
          
         
-    	    echo "<tr>
-        	<td>{$registrant['Name']}</td>
+                echo "<tr>
+                <td>{$registrant['Name']}</td>
             <td>{$registrant['Designation']}</td>
             <td>{$registrant['Phoneno']}</td>
             <td>{$registrant['email']}</td>
@@ -188,8 +192,8 @@
                    }
                       echo "</tbody>"; 
   echo "<tfoot>
-    	<tr>
-        	<td colspan='4' class='rounded-foot-left'><em>Attendence</em></td>
+            <tr>
+                <td colspan='4' class='rounded-foot-left'><em>Attendence</em></td>
             <td class='rounded-foot-right'>&nbsp;</td>
         </tr>
     </tfoot></table>";   }

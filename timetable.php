@@ -6,7 +6,7 @@ if(loggedin())
 {
 
 $fname=getuserfield('Name',$conn1);
-      echo 'You\'r logged in'.$fname.'<a href="logout.php">Log out</a><br>';
+      echo 'You\'r logged in'.$fname;
 
 $tsql="SELECT * FROM table".$_SESSION['id'];
 $stmt=sqlsrv_query($conn1,$tsql);
@@ -20,9 +20,17 @@ echo '<!DOCTYPE html>
     <head>
         <meta charset="utf-8" />
         <title></title>
+         <link rel="stylesheet" type="text/css" href="timetable.css">
+
+
     </head>
     <body>
-              <table border="1">
+    <div>
+<span></span>
+<link href="logout.css" rel="stylesheet" type="text/css"></link>
+<a href="logout.php">Log out</a></div>	
+</div>
+              <table id="customers" border="1">
                 <tr>
 				    <th></th>
                     <th>8.00-9.00</th>
@@ -139,7 +147,7 @@ $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 }
 else
 {
-    echo 'Not yet created<br>';
+    echo '<br>Not yet created<br>';
     echo '<form name="input" action="createSchedule.php" method="post">
           <input type="submit" value="Create schedule">
           </form>';

@@ -51,6 +51,12 @@ ul#menu li:hover li a:hover {
 </head>
  
 <body>
+<div>
+<span></span>
+<link href="logout.css" rel="stylesheet" type="text/css"></link>
+<a href="logout.php">Log out</a></div>	
+</div>
+
 <ul id="menu">
 <li><a href="#">Meeting</a>
     <ul class="submenu">

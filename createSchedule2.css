@@ -1,0 +1,37 @@
+.box {
+    width: 80px;
+    padding:20px;
+    height: 80px;
+    display: inline-block;
+    position:relative;
+    margin-top:100px;
+    overflow:hidden;
+    margin-left:20px;
+}
+.box .newContent {
+    display:none;
+}
+.div1 {
+    background: violet;
+    float: left;
+}
+.div2 {
+    background: indigo;
+    float: left;
+}
+.div3 {
+    background: blue;
+    float: left;
+}
+.div4 {
+    background: green;
+    float: left;
+}
+.div5 {
+    background: yellow;
+    float: left;
+}
+.div6 {
+    background: orange;
+    float: left;
+}

@@ -96,7 +96,7 @@
      putToDB('m11','m12',6);
 
      
-     header('Location:timetable.php');
+     header('Location:viewTimeTable.php');
     }
     else
   {

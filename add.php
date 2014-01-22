@@ -1,11 +1,13 @@
 
 <?php
   require 'core.inc.php';
+  require 'connect.inc.php'; 
   if(!loggedin())
   {
        header('Location: index.php');
   }
-
+  $fname=getuserfield('Name',$conn1);
+      echo 'You\'r logged in '.$fname;
   $j=1;
   for($k=1;$k<=12;$k++)
   {
@@ -62,9 +64,14 @@ $selects.on('change', function() {
 
 <link rel="stylesheet" type="text/css" href="main.css">
 <!--<script src="jquery-2.0.3.min.js"></script>-->
-<form name="output" action="timetable.php" method="post">
+<form name="output" action="viewTimeTable.php" method="post">
               <input type="submit" value="Time Table">
 </form>
+<div>
+<span></span>
+<link href="logout.css" rel="stylesheet" type="text/css"></link>
+<a href="logout.php">Log out</a></div>	
+</div>
 
 <form name="input" action="databaseEntry.php" method="post">
 <div class="abc">
