@@ -86,11 +86,8 @@ border-left: 1px solid #e9e9e9;
   {
      float: left;
       margin-left: 20px;
-         position: absolute;
+      position: absolute;
       margin-top: 80px;
-      border-style: solid;
-      border-width: medium;
-      border-color: #999;
       width: 250px;
       height: 200px;
       word-wrap: break-word;
