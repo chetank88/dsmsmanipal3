@@ -15,7 +15,7 @@ $stmt=sqlsrv_query($conn1,$tsql);
 $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 if($obj!=NULL)
  {
-    header('Location :timetable.php');
+    header('Location :viewTimetable.php');
  }
 }
 else

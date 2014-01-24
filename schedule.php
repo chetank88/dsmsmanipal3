@@ -158,44 +158,7 @@ else{
 }
 echo '</div>';
 */
-$tsql="select * from Bday WHERE bdate="."'".$date."'";
-$stmt=sqlsrv_query($conn1,$tsql);
-$obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 
-if($obj!=NULL)
-{
-    while(true)
-     {
-       if($obj==NULL){break;}
-        $tsql1="select Name,Email from People WHERE uid=".$obj[1];
-        $stmt1=sqlsrv_query($conn1,$tsql1);
-        $obj1=sqlsrv_fetch_array( $stmt1,SQLSRV_FETCH_NUMERIC);
-
-       echo $msg="Today is ".$obj[2].'\'s birthday.';
-       echo $to=$obj1[1];
-       $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
-     }
-}
-
-
-$tsql="select * from Event WHERE edate="."'".$date."'";
-$stmt=sqlsrv_query($conn1,$tsql);
-$obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
-
-if($obj!=NULL)
-{
-    while(true)
-     {
-       if($obj==NULL){break;}
-        $tsql1="select Name,Email from People WHERE uid=".$obj[1];
-        $stmt1=sqlsrv_query($conn1,$tsql1);
-        $obj1=sqlsrv_fetch_array( $stmt1,SQLSRV_FETCH_NUMERIC);
-
-       echo $msg=$obj[2].' at '.$obj[4].' on '.$obj[3]->format('m/d/Y').' at '.$obj[5]->format('H:i:s');
-       echo $to=$obj1[1];
-       $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
-     }
-}
 
 ?>
 </body>
