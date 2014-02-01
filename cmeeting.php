@@ -1,4 +1,8 @@
-
+<?php
+      include 'core.inc.php';
+          include 'connect.inc.php'; 
+          require 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,14 +54,6 @@
 <link href="logout.css" rel="stylesheet" type="text/css"></link>
 <a href="logout.php">Log out</a></div>	
 </div>
-        <ul id="menu">
-<li><a href="#">Meeting</a>
-    <ul class="submenu">
-        <li><a href="cmeeting.php">Create Meeting</a></li>
-        <li><a href="smeeting.php">See Meetings</a></li>
-    </ul>
-</li>
-</ul>
 
          <div class="normal">
         <form name="cmeeting" action="#" method="POST" class="form1" onsubmit="return validateForm()">
@@ -72,8 +68,7 @@
         </div>
    
         <?php
-          include 'core.inc.php';
-          include 'connect.inc.php'; 
+        
 
           if(!loggedin())
          {

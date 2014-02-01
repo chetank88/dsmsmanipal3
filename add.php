@@ -2,12 +2,13 @@
 <?php
   require 'core.inc.php';
   require 'connect.inc.php'; 
+  require 'header.php';
   if(!loggedin())
   {
        header('Location: index.php');
   }
   $fname=getuserfield('Name',$conn1);
-      echo 'You\'r logged in '.$fname;
+     // echo 'You\'r logged in '.$fname;
   $j=1;
   for($k=1;$k<=12;$k++)
   {
@@ -20,7 +21,7 @@
         {
 		 echo' <input type="text" name="n'.$GLOBALS['j']++.'"/>';
 	     echo ' <br />
-		  <select  name=n'.$GLOBALS['j']++.'>
+		  <select   name=n'.$GLOBALS['j']++.'>
 		  <option  selected="selected" value=1>8:00-9:00</option>
 		  <option value=3>9:00-10:00</option>
 		  <option value=6>10:30:11:30</option>
@@ -30,21 +31,13 @@
 		  <option value=16>3:30:4:30</option>
 		  <option value=18>4:30-5:30</option>
 		  </select>
-	     <br /><br />';?>
-         <!-- <script>var $selects = document.getElementById("select".<?php echo $s;?>);
-$selects.on('change', function() {
-    $("option", $selects).prop("disabled", false);
-    $selects.each(function() {
-        var $select = $(this), 
-            $options = $selects.not($select).find('option'),
-            selectedText = $select.children('option:selected').text();
-        $options.each(function() {
-            if($(this).text() == selectedText) $(this).prop("disabled", true);
-        });
-    });
-});-->
+	     <br /><br />';
 
-</script><?php
+         echo '<script type="text/javascript" src="js/multiSelect.js"></script>';
+  ?>
+
+
+<?php
         }
 	 
         echo 'Labs:<br />';
@@ -62,96 +55,124 @@ $selects.on('change', function() {
   
  ?>
 
-<link rel="stylesheet" type="text/css" href="main.css">
-<!--<script src="jquery-2.0.3.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="add.css">
+<link rel="stylesheet" type="text/css" href="createSchedule2.css">
 <form name="output" action="viewTimeTable.php" method="post">
-              <input type="submit" value="Time Table">
 </form>
-<div>
-<span></span>
-<link href="logout.css" rel="stylesheet" type="text/css"></link>
-<a href="logout.php">Log out</a></div>	
-</div>
 
 <form name="input" action="databaseEntry.php" method="post">
-<div class="abc">
+ <script type="text/javascript" src="js/jquery.js"></script>
+ <script type="text/javascript" src="js/animateAdd.js"></script>
 
-	MONDAY
+
+<div id="s1" >
+
+	<div class="box div1">
+        <div class="oldContent">Monday</div>
+        <div class="newContent">
 	<br />
 	
 		  Classes:<br />
 		  
 	      <br />
          <?php
-             display($_POST['m1'],$_POST['m2'],0);  
+             display($_POST['m1'],$_POST['m2'],1);  
          ?>
+            </div>
+        </div>
 </div>
 
-<div class="abc">
+<div id="s2">
 
-	TUESDAY
+	<div class="box div2">
+        <div class="oldContent">Tuesday</div>
+        <div class="newContent">
 	<br />
 	
 		  Classes:<br />
 		  
 	      <br />
          <?php
-            display($_POST['m3'],$_POST['m4'],1);  
+            display($_POST['m3'],$_POST['m4'],2);  
          ?>
+            </div>
+        </div>
 </div>
 
-<div class="abc">
+<div id="s3">
 
-	    WEDNESDAY
+	   <div class="box div3">
+        <div class="oldContent">Wednesday</div>
+        <div class="newContent">
 	<br />
 	
 		  Classes:<br />
 		  
 	      <br />
          <?php
-            display($_POST['m5'],$_POST['m6'],2);  
+            display($_POST['m5'],$_POST['m6'],3);  
          ?>
+            </div>
+           </div>
 </div>
 
-<div class="abc">
+<div id="s4">
 
-	THURSDAY
+	<div class="box div4">
+        <div class="oldContent">Thursday</div>
+        <div class="newContent">
 	<br />
 	
 		  Classes:<br />
 		  
 	      <br />
          <?php
-             display($_POST['m7'],$_POST['m8'],3);  
+             display($_POST['m7'],$_POST['m8'],4);  
          ?>
+            </div>
+        </div>
 </div>
 
-<div class="abc">
+<div id="s5">
 
-	FRIDAY
+	<div class="box div5">
+        <div class="oldContent">Friday</div>
+        <div class="newContent">
 	<br />
 	
 		  Classes:<br />
 		  
 	      <br />
          <?php
-            display($_POST['m9'],$_POST['m10'],4);  
+            display($_POST['m9'],$_POST['m10'],5);  
          ?>
+            </div>
+        </div>
 </div>
 
-<div class="abc">
 
-	SATURDAY
+<div id="s6">
+
+   <div class="box div6">
+        <div class="oldContent">Saturday</div>
+        <div class="newContent">
 	<br />
 	
 		  Classes:<br />
 		  
 	      <br />
          <?php
-           display($_POST['m11'],$_POST['m12'],5);    
-          echo ' <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-          <input type="submit" value="Create time table">';
+           display($_POST['m11'],$_POST['m12'],6);    
+          
          ?>
+            <br/><br/><br/>
+      <input type="submit" value="Create time table">
+            </div>
+       </div>
+   
 </div>
+
 </form>
+
+
 

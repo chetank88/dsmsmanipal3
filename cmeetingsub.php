@@ -23,8 +23,7 @@
 </li>
 </ul>
   <?php
-      include 'core.inc.php';
-      include 'connect.inc.php';
+
       if(!loggedin())
      {
        header('Location: index.php');

@@ -1,13 +1,14 @@
 <?php
     
 require 'core.inc.php';
-require 'connect.inc.php'; 
+require 'connect.inc.php';
+ require 'header.php'; 
 
 if(loggedin())
 {
 
 $fname=getuserfield('Name',$conn1);
-      echo 'You\'r logged in'.$fname;
+      //echo 'You\'r logged in'.$fname;
 
 $tsql="SELECT * FROM table".$_SESSION['id'];
 $stmt=sqlsrv_query($conn1,$tsql);
@@ -33,13 +34,10 @@ else
         <title></title>
 	<link href="createSchedule2.css" rel="stylesheet" type="text/css"></link>
      <link href="createSchedule.css" rel="stylesheet" type="text/css"></link>
-        <link href="logout.css" rel="stylesheet" type="text/css"></link>
+        
     </head>
     <body link="white">
-        <div id="main">
-         <span></span>
-            <a href="logout.php">Log out</a></link>	
-        </div>
+        
 <form name="input" action="add.php" method="post">
  <script type="text/javascript" src="js/jquery.js"></script>
  <script type="text/javascript" src="js/animate.js"></script>

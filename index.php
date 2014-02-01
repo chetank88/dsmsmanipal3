@@ -5,7 +5,7 @@
   
   if(loggedin())
   {
-      header('Location :schedule.php');
+      header('Location :home.php');
   }
   else
   {

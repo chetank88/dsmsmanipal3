@@ -1,0 +1,134 @@
+body
+{
+    background-color: white;
+}  
+*{ 
+     margin:0px; padding: 0px; 
+   }
+ 
+ h3
+  {
+      color:#09C;
+      text-align: center;
+  }
+
+  
+ #geli
+  {
+     
+     padding-bottom: 180px;
+      padding-right: 450px;
+  
+  } 
+#gemsg
+  {
+      float: left;
+      margin-left: 300px;
+      position: absolute;
+      margin-top: 100px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+     border-right: 1px solid black;
+         border-bottom: 1px solid black;
+      margin-top: 80px;
+      width: 740px;
+      height: 700px;
+      word-wrap: break-word;
+       border-radius:14px;
+     overflow:auto;
+  }
+  #emsg
+  {
+     float: left;
+      margin-left: 20px;
+      position: absolute;
+      margin-top: 80px;
+      width: 250px;
+      height: 240px;
+      word-wrap: break-word;
+       border-style: solid;
+      border-width: medium;
+      border-color: #999;
+      border-radius:25px;
+      overflow:auto;
+      z-index: -1;
+  }
+   #mmsg
+  {
+     float: left;
+      margin-left: 20px;
+      position: absolute;
+      margin-top: 350px;
+      width: 250px;
+      height: 400px;
+      word-wrap: break-word;
+       border-style: solid;
+      border-width: medium;
+      border-color: #999;
+      border-radius:25px;
+      overflow:auto;
+       
+  }
+   #bmsg
+  {
+     float: left;
+      margin-left: 1080px;
+         position: absolute;
+      margin-top: 80px;
+      border-style: solid;
+      border-width: medium;
+      border-color: #999;
+      width: 250px;
+      height: 240px;
+      word-wrap: break-word;
+      border-radius:25px;
+      overflow:auto;
+     
+  }
+   #pmsg
+  {
+     float: left;
+      margin-left: 1080px;
+         position: absolute;
+      margin-top: 350px;
+      border-style: solid;
+      border-width: medium;
+      border-color: #999;
+      width: 250px;
+      height: 200px;
+      word-wrap: break-word;
+      border-radius:25px;
+      overflow:auto;
+       
+  }
+   #ds1 div {
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+    overflow-y: auto;
+  
+    padding: 10px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar {
+    width: 14px;
+     
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+    border-top-left-radius: 0;
+     border-bottom-left-radius: 0;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+     border-bottom-left-radius: 0;
+    -webkit-box-shadow: inset 0 0 6px rgb(0,153,204); 
+}
+ 
+  
+  

@@ -1,19 +1,4 @@
-#main
-{
-	background:#AAC9C9;
-	position:fixed;
-	top:0;
-	width:100%;
-	color:white;
-	padding:10px 10px 10px 10px;
-	font-size:20px;
-        
-}
-#main1
-{
-	width:1000px;
-	float:right;
-}
+
 .center
 {
 	margin:0 auto;
@@ -32,6 +17,6 @@
 }
 body
 {
-	background-image:url('web.jpg');
+	
 }
 

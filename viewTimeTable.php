@@ -1,12 +1,13 @@
 <?php
 require 'core.inc.php';
 require 'connect.inc.php'; 
+ require 'header.php';
 
 if(loggedin())
 {
 
 $fname=getuserfield('Name',$conn1);
-      echo 'You\'r logged in '.$fname;
+     // echo 'You\'r logged in '.$fname;
 
 $tsql="SELECT * FROM table".$_SESSION['id'];
 $stmt=sqlsrv_query($conn1,$tsql);
@@ -24,11 +25,7 @@ echo '<!DOCTYPE html>
 
     </head>
     <body>
-    <div>
-<span></span>
-<link href="logout.css" rel="stylesheet" type="text/css"></link>
-<a href="logout.php">Log out</a></div>	
-</div>
+             <br><br><br>
               <table id="customers" border="1">
                 <tr>
 				    <th></th>

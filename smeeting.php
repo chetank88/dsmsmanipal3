@@ -2,6 +2,7 @@
   
      include 'connect.inc.php'; 
      include 'core.inc.php';
+      require 'header.php';
   if(!loggedin())
   {
       header('Location: index.inc.php');
@@ -18,19 +19,7 @@
       
     </head>
     <body>
-<div>
-<span></span>
-<link href="logout.css" rel="stylesheet" type="text/css"></link>
-<a href="logout.php">Log out</a></div>	
-</div>
-        <ul id="menu">
-<li><a href="#">Meeting</a>
-    <ul class="submenu">
-        <li><a href="cmeeting.php">Create Meeting</a></li>
-        <li><a href="smeeting.php">See Meetings</a></li>
-    </ul>
-</li>
-</ul>
+
           <?php
           
               try
