@@ -19,7 +19,7 @@
                 $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
                 $user = "harsha";
                 $pwd = "khv9440385189@";
-                $db2="Computer_SC_and_Engg";
+                $db2=$_SESSION['dpdb'];
 
        // Connect to database.
         try
@@ -33,7 +33,7 @@
 
 
                 
-                $db = "Computer_SC_and_Engg";
+                $db = $_SESSION['dpdb'];
                 try{
                    $connHar = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
                    $connHar->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
