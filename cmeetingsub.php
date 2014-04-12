@@ -1,3 +1,9 @@
+ <?php
+     include "core.inc.php";  
+     include "connect.inc.php";
+     require "header.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,27 +15,16 @@
 </head>
 
 <body onload="noBack();"  onunload="">
-<div>
-<span></span>
-<link href="logout.css" rel="stylesheet" type="text/css"></link>
-<a href="logout.php">Log out</a></div>	
-</div>
-<ul id="menu">
-<li><a href="#">Meeting</a>
-    <ul class="submenu">
-        <li><a href="cmeeting.php">Create Meeting</a></li>
-        <li><a href="smeeting.php">See Meetings</a></li>
-    </ul>
-</li>
-</ul>
-  <?php
 
+
+  <?php
+     
       if(!loggedin())
      {
        header('Location: index.php');
      }
      
-      $uid=$_SESSION['id'];
+ $uid=$_SESSION['id'];
 if(isset($_POST["submit"]) && $_POST["submit"]!="") 
 {
 $usersCount = count($_POST["chbox"]);
@@ -74,7 +69,7 @@ catch(Exception $e) {
 }
 try
 {
-$sql_query1="SELECT mid FROM Meeting WHERE uid= {$uid} and date='{$datep}' and time='{$timep}'";
+$sql_query1="SELECT mid FROM Meeting WHERE uid= '{$uid}' and date='{$datep}' and time='{$timep}'";
 
  $stmt = $connHar->query($sql_query1);
      $registrants = $stmt->fetchAll(); 
@@ -105,7 +100,7 @@ for($i=0;$i< $usersCount;$i++)
 
     $stmt->bindValue(1, $mid);
   
-    $stmt->bindValue(2, intval( $attid[$i]));
+    $stmt->bindValue(2, $attid[$i]);
     $btime="0000000000000000000";
       $mtime=$timep;
                  

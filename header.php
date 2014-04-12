@@ -37,7 +37,7 @@
           <li class="first"><a href="http://dsmsmanipal3.azurewebsites.net/home.php#">Messages</a>
            <ul>
             <li class="top"><a href="http://dsmsmanipal3.azurewebsites.net/createMessage.php">Create Messages</a></li>
-            <li><a href="http://dsmsmanipal3.azurewebsites.net/home.php#">View Messages</a></li>
+            <li><a href="http://dsmsmanipal3.azurewebsites.net/messageView.php">View Messages</a></li>
            </ul>
           </li>    
 

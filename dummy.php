@@ -1,16 +1,78 @@
-<?php $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+<?php
+require 'core.inc.php';
+require 'connect.inc.php'; 
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
 require "$root/PHPMailer_v5.1/test/testemail.php";
-require 'connect.inc.php';
 error_reporting(E_ALL);
 ini_set('dis[play_errors',1);
-//$service = implode(' ', $_POST['rid']);
-//echo $service;
-//$rid=$_POST['rid'];
-$msg="abc";
+if(!loggedin())
+{
+header('Location: index.php');
+}
+if($_POST['check']==1)
+{
+$msg=$_POST['gm'];
 $mydate=date("Y-m-d H:i:s");
-$id_chetan=14;
-echo $tsql="SELECT * FROM People WHERE uid =14";
-$stmt =$connHar->query($tsql); 
+try{$sql_insert = "INSERT INTO GMessage (ID, gmsg, gdate) 
+VALUES (?,?,?)";
+$stmt = $connHar->prepare($sql_insert);
+$stmt->bindValue(1, $_SESSION['id']);
+$stmt->bindValue(2,$msg);
+$stmt->bindValue(3, $mydate);
+$stmt->execute();}
+catch(Exception $e) {
+die(var_dump($e));
+}
+}
+else if ($_POST['check']==2)
+{
+try{$sql_insert = "INSERT INTO Bday (ID, bmsg, bdate) 
+VALUES (?,?,?)";
+$stmt = $connHar->prepare($sql_insert);
+$stmt->bindValue(1, $_SESSION['id']);
+$stmt->bindValue(2, $_POST['bmsg']);
+$stmt->bindValue(3, $_POST['stro']);
+$stmt->execute();}
+catch(Exception $e) {
+die(var_dump($e));
+}
+}
+else if ($_POST['check']==3)
+{
+try{$sql_insert = "INSERT INTO Event (ID, emsg, edate, eplace, etime) 
+VALUES (?,?,?,?,?)";
+$stmt = $connHar->prepare($sql_insert);
+$stmt->bindValue(1, $_SESSION['id']);
+$stmt->bindValue(2, $_POST['emsg']);
+$stmt->bindValue(3, $_POST['stro']);
+$stmt->bindValue(4, $_POST['eplace']);
+$stmt->bindValue(5, $_POST['stro2']);
+$stmt->execute();}
+catch(Exception $e) {
+die(var_dump($e));
+}
+}
+else if ($_POST['check']==4)
+{
+$msg=$_POST['note'];
+$mydate=date("Y-m-d H:i:s");
+try{$sql_insert = "INSERT INTO Notes (ID, notes, ndate) 
+VALUES (?,?,?)";
+$stmt = $connHar->prepare($sql_insert);
+$stmt->bindValue(1, $_SESSION['id']);
+$stmt->bindValue(2, $msg);
+$stmt->bindValue(3, $mydate);
+$stmt->execute();}
+catch(Exception $e) {
+die(var_dump($e));
+}
+}
+else if($_POST['check']==5)
+{
+$msg=$_POST['gm'];
+$mydate=date("Y-m-d H:i:s");
+$tsql="SELECT * FROM People WHERE uid ='{$_SESSION['id']}'";
+$stmt =$conn->query($tsql); 
 $periods=$stmt->fetchAll();
 $num=count($periods);
 if($num!=0)
@@ -22,12 +84,12 @@ $mymail=$perioda['email'];
 // echo $mymail;
 }
 }
-$rid=13;
+foreach($_POST['rid'] as $rid)
 {
 try{$sql_insert = "INSERT INTO IMPMSG (ID, RID, impmsg, impdate) 
 VALUES (?,?,?,?)";
-$stmt = $connHar->prepare($sql_insert);
-$stmt->bindValue(1, $id_chetan);
+$stmt = $conn->prepare($sql_insert);
+$stmt->bindValue(1, $_SESSION['id']);
 $stmt->bindValue(2, $rid);
 $stmt->bindValue(3, $msg);
 $stmt->bindValue(4, $mydate);
@@ -36,8 +98,8 @@ catch(Exception $e) {
 die(var_dump($e));
 }
 try{
-echo $tsql="SELECT * FROM People WHERE uid ='{$rid}'";
-$stmt =$connHar->query($tsql); 
+$tsql="SELECT * FROM People WHERE uid ='{$rid}'";
+$stmt =$conn->query($tsql); 
 $periods=$stmt->fetchAll();
 $num=count($periods);
 if($num!=0)
@@ -66,4 +128,14 @@ catch(Exception $e) {
 die(var_dump($e));
 }
 }
+}
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+</body>
+</html>

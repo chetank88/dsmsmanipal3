@@ -11,7 +11,7 @@
      {
          try
          {
-           $tsql="SELECT ID FROM USERS WHERE Username='{$name_hash}' AND Password='{$pass_hash}'";
+           $tsql="SELECT ID,Department FROM USERS WHERE Username='{$name_hash}' AND Password='{$pass_hash}'";
            $stmt =sqlsrv_query($connLG,$tsql,array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET));
            if( $stmt === false )
         {
@@ -30,7 +30,7 @@
                  
                       $obj=sqlsrv_fetch_object($stmt);
                       $_SESSION['id']=$obj->ID;
-                    
+                      $_SESSION['dpdb']=$obj->Department;
                     header('Location: index.php');
                   //echo $name = sqlsrv_get_field( $stmt, 0);
                 

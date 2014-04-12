@@ -1,8 +1,8 @@
-<?php
-      include 'core.inc.php';
+   <? include 'core.inc.php';
           include 'connect.inc.php'; 
-          require 'header.php';
-?>
+          require 'header.php';      
+  ?>
+          
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -49,11 +49,7 @@
 </script>
     </head>
     <body>
-<div>
-<span></span>
-<link href="logout.css" rel="stylesheet" type="text/css"></link>
-<a href="logout.php">Log out</a></div>	
-</div>
+
 
          <div class="normal">
         <form name="cmeeting" action="#" method="POST" class="form1" onsubmit="return validateForm()">
@@ -68,8 +64,7 @@
         </div>
    
         <?php
-        
-
+       
           if(!loggedin())
          {
              header('Location: index.php');
@@ -170,10 +165,11 @@ if(count($registrants) > 0) {
    
      
 
-    $sql_select3="SELECT * FROM  Meeting_Att WHERE attid={$registrant['uid']} and date={$mday}";
+    $sql_select3="SELECT * FROM  Meeting_Att WHERE attid='{$registrant['uid']}' and date={$mday}";
      $stmt2=$connHar->query($sql_select3);
+   
      $registrants2=$stmt2->fetchAll();
- 
+
      if(count($registrants2) > 0) {
        foreach($registrants2 as $registrant2)
        {
@@ -192,7 +188,7 @@ if(count($registrants) > 0) {
 <td id='sn[]'>%s</td>
 <td id='d[]'>%s</td>
 <td><input type='checkbox' id='myCheck' name='chbox[]' class='ckbox' /></td> 
-<input type='hidden' name='attid[]' value={$registrant['uid']}/>
+<input type='hidden' name='attid[]' value='{$registrant['uid']}'/>
 
 </tr>",$registrant['Name'],$registrant['Designation']);}
 

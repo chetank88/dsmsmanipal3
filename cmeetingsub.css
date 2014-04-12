@@ -1,4 +1,4 @@
-h1
+#csubh
 {
     color: #09c;
     font-family: Britannic;
@@ -7,7 +7,7 @@ h1
     left: 90px;
    
 }
-div 
+#csubd 
 {
     color: #09c;
    border-style:dotted;
@@ -15,22 +15,23 @@ div
 border-width:medium;
 position: absolute;
 left:500px;
-top: 100px;
-bottom:200px;
+top: 300px;
+bottom:0px;
 right: 500px; 
+height: 260px;
     
 }
-span.a
+#csubspan.a
 {
     color:#593E1A;
     position: absolute;
     left: 110px;
     font-family: Cooper;
     font: 30px;
-
+ 
     top: 70px;
 }
-span.b
+#csubspan.b
 {
     color:#593E1A;
     position: absolute;
@@ -40,7 +41,7 @@ span.b
   
     top: 100px;
 }
-span.c
+#csubspan.c
 {
     color:#593E1A;
     position: absolute;
@@ -75,7 +76,7 @@ border: 1p solid #999;
     border-radius: 15px;
 border: 1p solid #999;
  }
-
+ 
  input.button{
 width:100px;
 position:absolute;
@@ -89,45 +90,9 @@ height:30px;
 -moz-border-radius: 15px;
 border-radius: 15px;
 border: 1p solid #999;
-
+ 
 }
 input.button:hover {
 background:#fff;
 color:#09C;
-}
-ul#menu, ul.submenu{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-ul#menu li{
-    float: left;
-}
-/* hide the submenu */
-li ul.submenu {
-    display: none;
-}
-ul#menu li a{
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-    padding: 7px 14px;
-    background:black;
-    border-right: 1px solid white;
-    border-top: 1px solid white;
-    float:none;
-}
-/* show the submenu */
-ul#menu li:hover ul.submenu{
-    display: block;
-    position: absolute;
-    float:left;
-}
-ul#menu li:hover li,  ul#menu li:hover a {
-    float: none;
-    background: Red;
-}
-ul#menu li:hover li a:hover {
-    background: brown;
-
 }

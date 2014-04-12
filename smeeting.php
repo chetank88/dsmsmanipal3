@@ -85,7 +85,7 @@
     
         </tr>
     </thead>";
-      $sql_select="select * from Meeting,Meeting_Att,People where Meeting.mid=Meeting_Att.mid and Meeting.uid=People.uid and Meeting.uid!={$uid} and Meeting_Att.attid={$uid}";
+      $sql_select="select * from Meeting,Meeting_Att,People where Meeting.mid=Meeting_Att.mid and Meeting.uid=People.uid and Meeting.uid!='{$uid}' and Meeting_Att.attid='{$uid}'";
      $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
   

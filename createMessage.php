@@ -11,7 +11,7 @@ if(!loggedin())
 <div>
 <form method="post" name="form" id="form">
 Create general message <br />
-<input id="gm" name="gm" value="Type your message" type="text" />
+<input id="gm" name="gm"  type="text" />
 <div >
 <input type="submit" value="Submit" class="submit"/>
 <span class="error" style="display:none"> Please Enter Valid Data</span>
@@ -50,12 +50,12 @@ Create Note
 
 <div>
   Create Note
-<form name="form" method="post">
+<form name="form" method="post" id="form">
 <input type="text" name="impmsg" id="impmsg"/>
 <?php
 try
 {
-$tsql="SELECT * FROM People WHERE uid <>".$_SESSION['id'].";";
+$tsql="SELECT * FROM People WHERE uid <>'".$_SESSION['id']."';";
 $stmt =$connHar->query($tsql); 
 $periods=$stmt->fetchAll();
 $num=count($periods);
@@ -205,7 +205,7 @@ type: 'post',
 url: 'messageDBentry.php',
 data: str,
 success: function () {
-alert('important message was submitted');
+alert(name);
 }
 });
 }

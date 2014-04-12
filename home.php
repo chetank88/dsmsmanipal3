@@ -43,7 +43,7 @@ if($obj!=NULL)
      {
        if($obj==NULL) break;
 
-       $tsql1="select Name from People where uid=".$obj[1];
+       $tsql1="select Name from People where uid='".$obj[1]."'";
        $stmt1=sqlsrv_query($conn1,$tsql1);
        $obj1 = sqlsrv_fetch_array( $stmt1,SQLSRV_FETCH_NUMERIC);
 
@@ -57,8 +57,9 @@ else{
 echo '</div>';
 
 
-$tsql="select top 5 * from Event WHERE edate>="."'".$date."' and ID=".$_SESSION['id']." order by edate asc";
+$tsql="select top 5 * from Event WHERE edate>="."'".$date."' and ID='".$_SESSION['id']."' order by edate asc";
 $stmt=sqlsrv_query($conn1,$tsql);
+if($stmt!=NULL)
 $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 
 echo '<div id="emsg"><h3>EVENT</h3><br><br>';
@@ -79,6 +80,7 @@ echo '</div>';
 
 $tsql="select top 5 * from Bday WHERE bdate>="."'".$date."' and ID=".$_SESSION['id']." order by bdate asc";
 $stmt=sqlsrv_query($conn1,$tsql);
+if($stmt!=NULL)
 $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 
 echo '<div id="bmsg"><h3>BIRTHDAYS</h3><br><br>';
@@ -97,8 +99,9 @@ else{
 echo '</div>';
 
 
-$tsql="select top 5 * from IMPMSG WHERE RID=".$_SESSION['id']." order by MID desc";
+$tsql="select top 5 * from IMPMSG WHERE RID='".$_SESSION['id']."' order by MID desc";
 $stmt=sqlsrv_query($conn1,$tsql);
+if($stmt!=NULL)
 $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 
 echo '<div id="pmsg"><h3>PERSONAL MESSAGES</h3><br><br>';
@@ -108,7 +111,7 @@ if($obj!=NULL)
     for($i=0;$i<5;++$i)
      {
        if($obj==NULL) break;
-       $tsql1="select Name from People where uid=".$obj[1];
+       $tsql1="select Name from People where uid='".$obj[1]."'";
        $stmt1=sqlsrv_query($conn1,$tsql1);
        $obj1 = sqlsrv_fetch_array( $stmt1,SQLSRV_FETCH_NUMERIC);
 
@@ -122,8 +125,9 @@ else{
 echo '</div>';
 
 
-$tsql="select top 5 * from Meeting where uid=".$_SESSION['id'].' order by mid desc';
+$tsql="select top 5 * from Meeting where uid='".$_SESSION['id']."'order by mid desc";
 $stmt=sqlsrv_query($conn1,$tsql);
+if($stmt!=NULL)
 $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 
 echo '<div id="mmsg"><h3>TODAY\'S MEETINGS</h3><br><br>';
@@ -144,5 +148,3 @@ echo '</div>';
 ?>
 </body>
 </html>
-
-
