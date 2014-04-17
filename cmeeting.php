@@ -154,6 +154,8 @@ if(count($registrants) > 0) {
      $sql_select2="SELECT * FROM  {$registrant['tid']} ";
      $stmt1=$connHar->query($sql_select2);
      $registrants1=$stmt1->fetchAll();
+      if($registrants1!=NULL)
+   {
      $temp=$registrants1[$dn-1];
      $stemp=$temp['strbin'];
      //echo $stemp;
@@ -196,6 +198,7 @@ if(count($registrants) > 0) {
 </tr>",$registrant['Name'],$registrant['Designation']);}
 
      }
+  }
           
 }
 
