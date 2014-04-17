@@ -81,7 +81,8 @@ ini_set('display_errors', 'On');
                   print("<h3>People who are available!</h3>");
                   print( "<label><span id='cb'>");
                   echo "Time:";
-                  echo "harsha";
+                  //echo "harsha";
+                  echo $_POST['notes'];
                     $mtime= $_POST['mtime'];
                  
                    $mhour=$mtime[0]*10+$mtime[1];
@@ -138,6 +139,7 @@ else
     </thead>
     <tbody>
     <input type='hidden' name='titlep' value={$_POST['title']}/>
+   
 <input type='hidden' name='notesp' value={$_POST['notes']}/>
 <input type='hidden' name='datep' value={$_POST['mday']}/>
 <input type='hidden' name='timep' value={$_POST['mtime']}/>";

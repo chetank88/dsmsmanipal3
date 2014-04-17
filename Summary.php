@@ -29,6 +29,27 @@
                  }
         
     }
+    function delete($mid)
+    {
+     try {
+    // Insert data
+              $sql_insert = "Delete From Meeting
+                             WHERE mid={$mid};";
+                             echo $sql_insert;
+              $stmt =$connHar->exec( $sql_insert);
+              echo $stmt;
+               $sql_insert1 = "Delete From Meeting_Att
+                             WHERE mid={$mid};";
+                             echo $sql_insert1;
+
+              $stmt =$connHar->exec( $sql_insert1);
+                   echo $stmt;
+           
+                  }
+      catch(Exception $e){
+                    die(print_r($e));
+                 }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -145,25 +166,7 @@ color:#09C;
                     {
                          savef($_POST['tsum'],$_POST['mid']);
                         pdfgenerator($_POST['mid'],$uid);
-                         try {
-    // Insert data
-              $sql_insert = "Delete From Meeting
-                             WHERE mid={$_POST['mid']};";
-
-              $stmt =$connHar->exec( $sql_insert);
-              echo $stmt;
-               $sql_insert1 = "Delete From Meeting_Att
-                             WHERE mid={$_POST['mid']};";
-
-              $stmt =$connHar->exec( $sql_insert1);
-                   echo $stmt;
-           
-                  }
-      catch(Exception $e){
-                    die(print_r($e));
-                 }
-
-
+                        // delete($_POST['mid']);
                     }
                     else
                     {

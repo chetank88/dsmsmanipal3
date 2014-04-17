@@ -1,15 +1,18 @@
 <?php
 require('fpdf.php');
-
 function pdfgenerator($mid,$uid)
 {
-     include 'connect.inc.php'; 
+   include 'connect.inc.php'; 
+  // include 'core.inc.php';
+          
+
     $pdf =  new FPDF('P', 'mm', 'A4' );
     $pdf->AddPage();
     $pdf->SetFont('Arial','B',16);
     $pdf->Cell(5,10,'Summary For the Meeting No.'.$mid);
     
     $sql_select="SELECT * FROM  Meeting WHERE mid={$mid}";
+    echo $sql_select;
      $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
      foreach($registrants as $registrant)
@@ -34,7 +37,7 @@ $pdf->setY(60);
  $pdf->MultiCell(0,5,$info);
 
 
-     $sql_select="SELECT * FROM  People WHERE uid={$uid}";
+     $sql_select="SELECT * FROM  People WHERE uid='{$uid}'";
      $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
 
@@ -47,7 +50,7 @@ $pdf->setY(60);
       $pdf->Cell(40,10,'Created By:'.$crby,0,1,'L');
       $pdf->setY(110);
        $pdf->Cell(40,10,$deg,0,1,'L');
-      $sql_select="select Name,Designation,attendence from Meeting_Att,People where mid='{$mid}' and uid=attid";
+      $sql_select="select Name,Designation,attendence from Meeting_Att,People where mid={$mid} and uid=attid";
             $stmt=$connHar->query($sql_select);
              $registrants=$stmt->fetchAll();
       

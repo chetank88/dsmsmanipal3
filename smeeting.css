@@ -22,6 +22,7 @@
 	font-size: 13px;
 	color: #039;
 	background: #b9c9fe;
+    white-space: nowrap;
 }
 #rounded-corner td
 {
@@ -29,6 +30,7 @@
 	background: #e8edff;
 	border-top: 1px solid #fff;
 	color: #669;
+    white-space: nowrap;
 }
 #rounded-corner tfoot td.rounded-foot-left
 {
@@ -56,6 +58,7 @@ border-radius: 15px;
 border: 1p solid #999;
 
 }
+
 input.button:hover {
 background:#fff;
 color:#09C;

@@ -131,7 +131,8 @@ catch(Exception $e) {
 echo "<div id='csubd'><h1 id='csubh' >MEETING CREATED....!</h1>";
 echo "<span id='csubspan' class='a'>Name:".$titlep."</span><br>";
 echo  "<span id='csubspan' class='b'>Date:".$datep."</span><br>";
-echo  "<span id='csubspan' class='c'>Time:".$timep."</span><br><input type='button' class='smsbutton' value='Send SMS'/><input type='button' class='button' value='Send Email'/> </div>";
+echo  "<span id='csubspan' class='c'>Time:".$timep."</span><br><input type='button' class='smsbutton' value='Send SMS'/><input type='button' class='button' value='Send Email'/> 
+</div>";
 }
 else
 {
