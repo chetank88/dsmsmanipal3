@@ -35,6 +35,7 @@ if(loggedin())
   }
 ?>
     <body>
+        <div class="well col-md-4 col-md-offset-4">
         <form name="form" method="post" id="form">
 <div id="pop1" class="pop-up">
   <div class="popBox">
@@ -95,7 +96,8 @@ if($obj!=NULL)
        echo  '<p>'.$obj[3]->format('m/d/Y').'- '.$obj[2].'</p>';
         echo'
         <input type="hidden" name="variable" value="50" />
-        <a href="#pop1"><input type="image" onclick="javascript:passMid('.$obj[0].')" src="/MessageImages/edit.jpg"></a>';
+        <a href="#pop1">
+        <span class="glyphicon glyphicon-pencil" onclick="javascript:passMid('.$obj[0].')"></span></a>';
        
        $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
      }
@@ -107,6 +109,7 @@ echo '</div>';
 
   
 ?> 
+            </div>
     </body>
 </html>
  
@@ -126,7 +129,8 @@ libs/jquery/1.3.0/jquery.min.js">
                 alert("Message was changed sucessfully!!!!");
             }
         });
-        return true;
+        //return false;
+       alert("hello");
 
     }</script>
 

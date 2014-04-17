@@ -51,7 +51,7 @@
     <body>
 
 
-         <div class="normal">
+         <div class="normal" style="padding-top: 65px;">
         <form name="cmeeting" action="#" method="POST" class="form1" onsubmit="return validateForm()">
                <h1>New meeting</h1>
    
@@ -81,6 +81,7 @@ ini_set('display_errors', 'On');
                   print("<h3>People who are available!</h3>");
                   print( "<label><span id='cb'>");
                   echo "Time:";
+                  echo "harsha";
                     $mtime= $_POST['mtime'];
                  
                    $mhour=$mtime[0]*10+$mtime[1];
@@ -188,7 +189,7 @@ if(count($registrants) > 0) {
 <td id='sn[]'>%s</td>
 <td id='d[]'>%s</td>
 <td><input type='checkbox' id='myCheck' name='chbox[]' class='ckbox' /></td> 
-<input type='hidden' name='attid[]' value='{$registrant['uid']}'/>
+<input type='hidden' name='attid[]' value={$registrant['uid']}/>
 
 </tr>",$registrant['Name'],$registrant['Designation']);}
 
@@ -207,7 +208,7 @@ echo" </tbody>
 print("<span id='cb'>Selection based on Rank</span><ul> <li>Proffesor<input type='checkbox' class='ckdbox' name='p' onchange='myFunctionp()' /></li><li>AssosiateProffesor<input type='checkbox' class='ckdbox' onchange='myFunctionasp()'/></li><li>AssitantProffesor(sr.scale)<input type='checkbox' class='ckdbox' onchange='myFunctionassp()'/></li>
  <li>AssistantProffesor(Selection Grade)<input type='checkbox' class='ckdbox' onchange='myFunctionassgp()' /></li>  <li>AssistantProffesor<input type='checkbox' class='ckdbox' onchange='myFunctionap()'/></li><li>EveryBody<input type='checkbox' class='ckdbox' onchange='myFunctione()' /></li>");
 
- print("<input type='submit'  class='button' name='submit'  value='conform'>  ");   
+ print("<input type='submit'  class='button' name='submit'  value='confirm'>  ");   
   
   print("<INPUT TYPE='button' VALUE='Cancel' class='cancelbutton' onClick='history.go(-1);'>");  
   print("</form>");     

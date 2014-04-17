@@ -95,7 +95,6 @@ color:#09C;
 }
  /* This is the CSS for the normal div */
   .normal {
-
     width: 900px;
     min-height: 200px;
     padding: 20px;
@@ -109,8 +108,8 @@ color:#09C;
     padding: 20px;
     display: block;
     position: absolute;
-    top: 10px;
-    right: 500px;
+    top: 90px;
+    left: 500px;
     width: 400px;
     height: 570px;
   }
@@ -125,14 +124,14 @@ color:#09C;
     min-height: 100%;
     overflow: hidden;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50px;
+    left: 300px;
     color: white;
   }
 .container {
     border: 2px solid #ccc;
     width: 400px;
-    height: 280px;
+    height: 210px;
     overflow-y: scroll;
     border-width: 0px;
 }

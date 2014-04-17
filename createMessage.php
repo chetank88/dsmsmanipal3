@@ -8,29 +8,41 @@ if(!loggedin())
     header('Location: index.php');
 }
 ?>
-<div>
-<form method="post" name="form" id="form">
+<style>
+    span
+{
+    display:inline-block; 
+    width:160px;
+}
+</style>
+ <link rel="stylesheet" href="js/chosen.css">
+<div style="padding-top: 50px;">
+<div class="row well ">
+<div class="col-md-6">
+<form method="post" name="form" id="form" class="form">
 Create general message <br />
 <input id="gm" name="gm"  type="text" />
-<div >
+<div>
 <input type="submit" value="Submit" class="submit"/>
 <span class="error" style="display:none"> Please Enter Valid Data</span>
 <span class="success" style="display:none"> Registration Successfully</span>
 </div></form>
 </div>
-<div>
-<form method="post" name="form" id="form">
+<div class="col-md-6">
+<form method="post" name="form" id="form" class="form">
 Who's birthday?<br />
-<input id ="bmsg" name="bmsg" type="text"/>
-Event Date :<br /> 
+<input id ="bmsg" name="bmsg" type="text"/> 
 <input id ="bdate" name="bdate" type="date"/>
+    <br />
 <input type="submit" value="Submit" class="submit2">
 </form>
 </div>
-<div>
+    </div>
+<div class="row well">
+<div class="col-md-4">
 <form name="form" method="post" id="form">
-<input type="text" id="emsg" name="emsg"/>
-<input type="text" id="eplace" name="eplace"/>
+<input type="text" id="emsg" name="emsg" placeholder="Event Title"/>
+<input type="text" id="eplace" name="eplace" placeholder="Event Place"/>
 <div>
 <label for="meeting">Event Date : </label><input name="edate" id="edate" type="date"/>
 </div>
@@ -40,15 +52,16 @@ Event Date :<br />
 <input type="submit" value="Submit" class="submit3">
 </form>
 </div>
-<div>
+<div class="col-md-4">
 Create Note
 <form name="form" method="post" id="form">
 <input type="text" name="note" id="note"/>
+    <br />
 <input type="submit" value="Submit" class="submit4">
 </form>
 </div>
 
-<div>
+<div class=" col-md-4">
   Create Note
 <form name="form" method="post" id="form">
 <input type="text" name="impmsg" id="impmsg"/>
@@ -63,12 +76,15 @@ if($num==0)
 {}
 else 
 {
-echo '<br />';
+?>
+    <br />
+
+<select class="chosen-select" data-placeholder="Choose Names" multiple style="width:200px;" tabindex="4" name="rid[]">
+<?php
 foreach($periods as $period)
 {?>
+     <option value="<?php echo $period['uid']?>"><?php echo $period['Name'].' '.$period['Lname'];?></option>
 
-<input type="checkbox" name="rid[]" value="<?php echo $period['uid']?>" /><?php echo $period['Name'].' '.$period['Lname'];?>
-<br />
 <?php }
 
 //echo $name = sqlsrv_get_field( $stmt, 0);
@@ -80,11 +96,27 @@ catch(Exception $e)
 die(print_r($e));
 }
 ?>
+ </select>
+ <br />  
 <input type="submit" value="Submit" class="submit5">
 </form>
-
+    </div>
 </div>
- 
+</div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+  <script src="js/chosen.jquery.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var config = {
+      '.chosen-select'           : {},
+      '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      '.chosen-select-width'     : {width:"5%"}
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+  </script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/
 libs/jquery/1.3.0/jquery.min.js">
 </script>

@@ -1,6 +1,6 @@
 <?php
   
-     include 'connect.inc.php'; 
+     
      include 'core.inc.php';
       require 'header.php';
   if(!loggedin())
@@ -21,7 +21,7 @@
     <body>
 
           <?php
-          
+            include 'connect.inc.php'; 
               try
               {
                      echo "<table id='rounded-corner' summary='Meetings Created By U'>
@@ -35,10 +35,13 @@
                <th scope='col' class='rounded-q4'>Attendence</th>
         </tr>
     </thead>";
-               $sql_select="SELECT * FROM  Meeting WHERE uid={$uid}";
-     $stmt=$connHar->query($sql_select);
+                  
+               
+               $sql_select="SELECT * FROM Meeting where uid='{$uid}'";
+           $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
-     $n=count($registrants) ;
+     $n=count($registrants);
+     
   echo "<tbody>";
        
               if($n>0) {
@@ -69,6 +72,7 @@
     </tfoot></table>";   }
               }
                 catch(Exception $e){
+                  
                     die(print_r($e));
                  }
      try
@@ -86,6 +90,7 @@
         </tr>
     </thead>";
       $sql_select="select * from Meeting,Meeting_Att,People where Meeting.mid=Meeting_Att.mid and Meeting.uid=People.uid and Meeting.uid!='{$uid}' and Meeting_Att.attid='{$uid}'";
+    //echo $sql_select;
      $stmt=$connHar->query($sql_select);
      $registrants=$stmt->fetchAll();
   

@@ -1,6 +1,6 @@
 <?php
  include 'core.inc.php';
- include 'connect.inc.php'; 
+
  require 'header.php';
 
  if(!loggedin())
@@ -17,14 +17,9 @@
              <link rel="stylesheet" type="text/css" href="smeeting.css">
     </head>
     <body>
-<div>
-<span></span>
-<link href="logout.css" rel="stylesheet" type="text/css"></link>
-<a href="logout.php">Log out</a></div>	
-</div>
      
-        <?php
-            
+ <?php
+             include 'connect.inc.php'; 
          
             if(isset($_GET['mid'])&&$_GET['s']=='y'&&!isset($_POST['chbox']))
             {//Database Connection
@@ -97,8 +92,13 @@
             <td class='rounded-foot-right'>&nbsp;</td>
         </tr>
    </form> </tfoot></table>";   }
-                    }
-   }
+  }
+
+  else
+  {
+      echo "no data";
+  }
+}
                     
               
                 catch(Exception $e){
@@ -132,7 +132,7 @@
                          $attid[$i]=chop($attid[$i],"/");
                    // echo $attid[$i];
                           $sql_update = "UPDATE Meeting_Att SET attendence='true' 
-                   WHERE attid={$attid[$i]} and mid={$unsecure}";
+                   WHERE attid='{$attid[$i]}' and mid={$unsecure}";
                      //   echo $sql_update;
     
                     }
@@ -141,8 +141,8 @@
                         //  echo $attid[$i];
                          $attid[$i]=chop($attid[$i],"/");
                           $sql_update = "UPDATE Meeting_Att SET attendence='false' 
-                   WHERE attid={$attid[$i]} and mid={$unsecure}";
-                    
+                   WHERE attid='{$attid[$i]}' and mid={$unsecure}";
+                   
                    //echo $sql_update;
                     }
                     $stmt = $connHar->query($sql_update);
@@ -183,8 +183,14 @@
             echo "</td></tr>";
   
             }
-                   }
-                      echo "</tbody>"; 
+          }
+          else
+          {
+              echo "no data";
+          }
+
+          
+  echo "</tbody>"; 
   echo "<tfoot>
             <tr>
                 <td colspan='4' class='rounded-foot-left'><em>Attendence</em></td>

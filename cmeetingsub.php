@@ -31,6 +31,7 @@ $usersCount = count($_POST["chbox"]);
 
 $chbox=  $_POST["chbox"];
 $attid=  $_POST["attid"];
+
 $titlep= $_POST["titlep"];
 $titlep=rtrim($titlep,'/');
 $notesp=  $_POST["notesp"];
@@ -85,14 +86,14 @@ catch(Exception $e) {
     die(var_dump($e));
   
 }
-  echo $usersCount; 
+  //echo $usersCount; 
 for($i=0;$i< $usersCount;$i++)
  {
 
       if(isset($chbox[$i]))
       {
             try {
-      
+          $attid[$i]=rtrim($attid[$i],'/');
            $sql_insert = "INSERT INTO Meeting_Att (mid, attid, btime,date) 
                    VALUES (?,?,?,?)";
                      
@@ -127,14 +128,14 @@ catch(Exception $e) {
 }
       }
 }  
-echo "<div><h1>MEETING CREATED....!</h1>";
-echo "<span class='a'>Name:".$titlep."</span><br>";
-echo  "<span class='b'>Date:".$datep."</span><br>";
-echo  "<span class='c'>Time:".$timep."</span><br><input type='button' class='smsbutton' value='Send SMS'/><input type='button' class='button' value='Send Email'/> </div>";
+echo "<div id='csubd'><h1 id='csubh' >MEETING CREATED....!</h1>";
+echo "<span id='csubspan' class='a'>Name:".$titlep."</span><br>";
+echo  "<span id='csubspan' class='b'>Date:".$datep."</span><br>";
+echo  "<span id='csubspan' class='c'>Time:".$timep."</span><br><input type='button' class='smsbutton' value='Send SMS'/><input type='button' class='button' value='Send Email'/> </div>";
 }
 else
 {
-    echo "<h1>no Meeting to create</h1>";
+    echo "<h1 id='csubh'>no Meeting to create</h1>";
 }
 
 ?>

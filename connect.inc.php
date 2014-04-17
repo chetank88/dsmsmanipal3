@@ -15,15 +15,17 @@
      {  print( "Error connecting to SQL Server." );  die(print_r($e));}
 
 
+    
     // echo 'Successfully connected to '.$db;echo "<br/>";
                 $host = "tcp:pf9xx4rmq4.database.windows.net,1433";
                 $user = "harsha";
                 $pwd = "khv9440385189@";
                 $db2=$_SESSION['dpdb'];
-
+               
        // Connect to database.
         try
 	   { 
+
            $connectionInfo = array("UID" =>$user , "PWD" => $pwd, "Database"=>$db2);
            $conn1=sqlsrv_connect($host, $connectionInfo);
        }
