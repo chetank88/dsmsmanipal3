@@ -358,9 +358,9 @@ $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 </html>';
 
  $_SESSION['className']=$_POST['className'];
-   echo  '<form name="input" action="deleteRows.php" method="post">
+   /*echo  '<form name="input" action="deleteRows.php" method="post">
           <input type="submit" value="Edit">
-          </form>';
+          </form>';*/
 }    
 }
 

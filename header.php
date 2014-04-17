@@ -33,6 +33,7 @@
         <ul>
             <li class="top"><a href="http://dsmsmanipal3.azurewebsites.net/createSchedule.php">Create Schedule</a></li>
             <li><a href="http://dsmsmanipal3.azurewebsites.net/viewTimeTable.php">View Schedule</a></li>
+            <li><a href="viewClassTT.php">Class Time Table </a></li>
         </ul>
         </li>
           <li class="first"><a href="http://dsmsmanipal3.azurewebsites.net/home.php#">Meeting</a>
