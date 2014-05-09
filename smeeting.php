@@ -29,11 +29,11 @@
             <tr>
                 <th scope='col' class='rounded-company'>Meeting Id</th>
             <th scope='col' class='rounded-q1'>Title</th>
-            <th scope='col' class='rounded-q2'>Info</th>
+           
             <th scope='col' class='rounded-q2'>Date</th>
             <th scope='col' class='rounded-q2'>Time</th>
-               <th scope='col' class='rounded-q2'>Attendence</th>
-               <th scope='col' class='rounded-q4'>Summary</th>
+                    <th scope='col' class='rounded-q4'>Details</th>
+              
         </tr>
     </thead>";
                   
@@ -56,12 +56,10 @@
         echo " <tr>
                 <td>{$registrant['mid']}</td>
             <td>{$registrant['tytle']}</td>
-            <td>{$registrant['otherinfo']}</td>
             <td>{$registrant['date']}</td>
             <td>{$registrant['time']}</td>
-            <td><a href='atten.php?mid={$secure}&s=y'><input  type='submit' class='button' name='butt[]' value='Attendence'/></a></td>
-                <td><a href='Summary.php?mid={$secure}&s=y'><input  type='submit' class='button' name='butt[]' value='Attendence'/></a></td>
-            
+         
+             <td><a href='details.php?mid={$secure}&s=y'><input  type='submit' class='button' name='butt[]' value='Details'/></a></td>
         </tr>";
     
 

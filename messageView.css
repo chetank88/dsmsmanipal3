@@ -47,4 +47,11 @@
 .close span {text-indent:-200em; display:block;}
 
 /* .popScroll {max-height:99%; overflow-y:scroll;} removed 17/07/2012 */
-.popScroll {position:absolute; top:9%; left:3%; right:3%; bottom:9%; overflow-y:
+.popScroll {
+    position: absolute;
+    top: 9%;
+    left: 3%;
+    right: 3%;
+    bottom: 9%;
+    overflow-y: hidden;
+}

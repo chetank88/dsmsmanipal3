@@ -11,8 +11,9 @@
     <head>
         <meta charset="utf-8" />
         <title></title>
-        
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <link href="messageView.css" rel="stylesheet" type="text/css">
+
         
     </head>
 
@@ -35,7 +36,7 @@ if(loggedin())
   }
 ?>
     <body>
-        <div class="well col-md-4 col-md-offset-4">
+        <div class="well col-md-4 col-md-offset-4" style="z-index:-1;">
         <form name="form" method="post" id="form">
 <div id="pop1" class="pop-up">
   <div class="popBox">

@@ -22,10 +22,12 @@ if(!loggedin())
          <select   name="className" id="className">
 
             <?php
+           
                 $tsql="SELECT * FROM classList";
                 $stmt=sqlsrv_query($conn1,$tsql);
                  $sec=array();
                  $i=0;
+                 
                  if($stmt!=NULL)
                 {
                     $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
@@ -40,6 +42,10 @@ if(!loggedin())
                          $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
                     }  
 
+                }
+                else
+                {
+                    echo 'error';
                 }
           
           ?>
@@ -358,7 +364,7 @@ $obj = sqlsrv_fetch_array( $stmt,SQLSRV_FETCH_NUMERIC);
 </html>';
 
  $_SESSION['className']=$_POST['className'];
-   /*echo  '<form name="input" action="deleteRows.php" method="post">
+/*   echo  '<form name="input" action="deleteRows.php" method="post">
           <input type="submit" value="Edit">
           </form>';*/
 }    

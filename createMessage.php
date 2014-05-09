@@ -15,6 +15,7 @@ if(!loggedin())
     width:160px;
 }
 </style>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="js/chosen.css">
 <div style="padding-top: 50px;">
 <div class="row well ">

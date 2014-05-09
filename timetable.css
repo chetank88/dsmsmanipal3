@@ -2,7 +2,7 @@
 {
 font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 width:100%;
-border-style:double ;
+border-style: solid;
 }
 #customers td, #customers th 
 {
@@ -17,7 +17,7 @@ text-align:left;
 padding-top:5px;
 padding-bottom:4px;
 background-color:#09C;
-color:#f00;
+color:#ffffff;
 }
 #customers tr.alt td 
 {
